@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Machine</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script type="module" src="./scripts.js" defer></script>
+  <script type="module" src="./quotes.js" defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" href="./resources/quote.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <script src="https://kit.fontawesome.com/935b5672af.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <h1 class="text-center">Life Quotes</h1>
+
+  <div class='container-fluid d-flex m-5 justify-content-center align-items-center'></div>
+  <div class='container-fluid d-flex flex-column p-5 w-75 justify-content-center align-items-center'
+    id="quote-container">
+    <div class='container-fluid text-primary p-3 d-flex justify-content-center' id="quote-div"></div>
+    <div class='container-fluid text-info d-flex justify-content-end' id="author-div"></div>
+    <div class="container-fluid d-flex justify-content-end">
+      <button class="btn btn-success row" id="new-quote-btn">New Quote</button>
+    </div>
+  </div>
+
+
+
+  <!--<a href="https://www.flaticon.com/free-icons/quote" title="quote icons">Quote icons created by Flat-icons-com - Flaticon</a>-->
+</body>
+
+</html>

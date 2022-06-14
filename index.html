@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Random Quote Machine</title>
+  <title>Life Quotes</title>
   <link rel="stylesheet" href="./styles.css" />
   <script type="module" src="./scripts.js" defer></script>
   <script type="module" src="./quotes.js" defer></script>
@@ -22,17 +22,67 @@
 </head>
 
 <body>
-  <h1 class="text-center">Life Quotes</h1>
 
-  <div class='container-fluid d-flex m-5 justify-content-center align-items-center'></div>
-  <div class='container-fluid d-flex flex-column p-5 w-75 justify-content-center align-items-center'
-    id="quote-container">
-    <div class='container-fluid text-primary p-3 d-flex justify-content-center' id="quote-div"></div>
-    <div class='container-fluid text-info d-flex justify-content-end' id="author-div"></div>
-    <div class="container-fluid d-flex justify-content-end">
-      <button class="btn btn-success row" id="new-quote-btn">New Quote</button>
-    </div>
+  <div class="backgroundMedia">
+    <video id="background" autoplay loop muted>
+      <source src="./resources/nature.mp4" type="video/mp4">
+      Your browser does not support the background video.
+    </video>
+    <audio id="music" src="resources/forestwalk.mp3" loop></audio>
+    <aud, io id="ambience" src="resources/waterfall.mp3" loop></audio>
   </div>
+
+  <nav id="navbar row">
+    <div class="col-8">
+      <span class="fa-stack fa" id="music-icon" onclick="controlMusic()">
+        <i class="fa-solid fa-music fa-stack-1x"></i>
+        <i class="fa-solid fa-slash fa-stack-1x" id="music-mute"></i>
+        <i class="fa-regular fa-circle fa-stack-2x"></i>
+      </span>
+      <span class="fa-stack fa" id="ambience-icon">
+        <i class="fa-solid fa-volume-high fa-stack-1x"></i>
+        <i class="fa-solid fa-slash fa-stack-1x" id="ambience-mute"></i>
+        <i class="fa-regular fa-circle fa-stack-2x"></i>
+      </span>
+    </div>
+    <ul id="nav-list col-3">
+      <li><a id="nav-link" href="#info-section">Info</a></li>
+    </ul>
+  </nav>
+
+  <section id="main-section" class="main-section d-flex justify-content-center align-items-center">
+
+    <!--<h1 class="text-center">Life Quotes</h1>
+    
+    -->
+
+    <div class='container-fluid d-flex flex-column p-5 w-50 justify-content-center align-items-center' id="quote-box">
+      <div class='container-fluid d-flex justify-content-center' id="text"></div>
+      <div class='container-fluid d-flex justify-content-end' id="author"></div>
+      <div class="container-fluid d-flex justify-content-end">
+        <button class="btn btn-success row" id="new-quote">New Quote</button>
+      </div>
+  </section>
+
+  <section id="info-section"
+    class="info-section container-fluid d-flex flex-column justify-content-center align-items-center">
+    <h2 id="h2">Hey, enjoying the view?</h2>
+    <p>Let me know what you think</p>
+    <div id="media">
+      <a href="https://github.com/nmorelli96" target="_blank" class="contact-btn"><i
+          class="fa-brands fa-github"></i>GitHub
+      </a>
+      <a href="https://twitter.com/nicom_ar" target="_blank" class="contact-btn"><i
+          class="fa-brands fa-twitter-square"></i>Twitter
+      </a>
+      <a href="https://www.linkedin.com/in/nicolasmorelli18/" target="_blank" class="contact-btn" id="profile-link"><i
+          class="fa-brands fa-linkedin"></i>LinkedIn
+      </a>
+      <a href="mailto:morellinicolas96@gmail.com" target="_blank" class="contact-btn"><i
+          class="fa-solid fa-square-envelope"></i>email me
+    </div>
+    </a>
+  </section>
 
 
 

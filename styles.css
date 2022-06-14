@@ -1,3 +1,58 @@
-#quote-container {
-  background-color:rgba(190, 211, 72, 0.712);
+#background {
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(0.9);
+  filter: blur(0.6px);
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px 10px 50px;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 2px 2px #2e2d2d;
+}
+
+i {
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+li>a {
+  text-decoration: none;
+  color: white;
+  text-shadow: 0 0 5px white;
+}
+
+#main-section {
+  width: 100vw;
+  height: 100vh;
+}
+
+#quote-box {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border-radius: 30px;
+  box-shadow: 0 0 5px gray;
+}
+
+#info-section {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: #dee2b8;
 }

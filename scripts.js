@@ -8,9 +8,10 @@ const ambienceIcon = document.getElementById('ambience-icon');
 const musicMute = document.getElementById('music-mute');
 const ambienceMute = document.getElementById('ambience-mute');
 
-const quotePara = document.createElement("p");
-const authorPara = document.createElement("p");
+const quotePara = document.getElementById("quote-para");
+const authorPara = document.getElementById("author-para");
 
+const quoteBox = document.getElementById('quote-box');
 const quoteDiv = document.getElementById('text');
 const authorDiv = document.getElementById('author');
 const newQuoteBtn = document.getElementById('new-quote');
@@ -18,7 +19,17 @@ const newQuoteBtn = document.getElementById('new-quote');
 getQuote();
 
 newQuoteBtn.addEventListener("click", (event) => {
-  getQuote();
+  quoteBox.classList.add('animate__animated', 'animate__fadeOutUp');
+  quoteBox.addEventListener('animationend', () => {
+    
+    console.log(quotePara.innerText);
+    getQuote();
+    quoteBox.classList.remove('animate__animated', 'animate__fadeOutUp');
+    quoteBox.classList.add('animate__animated', 'animate__fadeInUp');
+    quoteBox.addEventListener('animationend', () => {
+      quoteBox.classList.remove('animate__animated', 'animate__fadeInUp');
+    });
+  });
 })
 
 function getQuote() {
@@ -26,8 +37,6 @@ function getQuote() {
   let printedQuote = quotes[quoteIndex];
   quotePara.innerHTML = '"' + printedQuote.quote + '"';
   authorPara.innerHTML = printedQuote.author;
-  quoteDiv.appendChild(quotePara);
-  authorDiv.appendChild(authorPara);
   //console.log(quoteIndex);
   //console.log(printedQuote);
   quotes.splice(quoteIndex, 1);
@@ -58,5 +67,7 @@ ambienceIcon.onclick = function controlAmbience() {
     ambienceMute.style.display = "none";
   }
 }
+
+
 
 //console.log(getQuote())

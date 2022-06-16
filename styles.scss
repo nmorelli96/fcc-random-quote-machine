@@ -1,6 +1,4 @@
-body {
-  padding-right: 0 !important;
-}
+body { padding-right: 0 !important }
 
 #preloader {
   background: black url(./resources/loop.gif) no-repeat center center;
@@ -15,8 +13,7 @@ body {
   z-index: -1;
   width: 100%;
   height: 100vh;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   filter: brightness(0.9);
   filter: blur(0.6px);
 }
@@ -64,10 +61,11 @@ nav {
   border-radius: 30px;
   box-shadow: 0 0 5px gray;
   min-width: 300px !important;
-}
-#quote-box #quote-para {
-  text-align: justify;
-  font-style: italic;
+
+  #quote-para {
+    text-align: justify;
+    font-style: italic;
+  }
 }
 
 #info-section {
@@ -78,65 +76,28 @@ nav {
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
+  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
 }
 
 .quoteBoxAnim {
-  -webkit-animation: quoteAnim 2s ease-in-out 0s 1 normal;
-          animation: quoteAnim 2s ease-in-out 0s 1 normal;
+  animation: quoteAnim 2s ease-in-out 0s 1 normal;
 }
 
 .fadeOutAnim {
-  -webkit-animation: fade 1s linear 0s 1 normal;
-          animation: fade 1s linear 0s 1 normal;
-}
-
-@-webkit-keyframes quoteAnim {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  51% {
-    transform: translateY(100px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+  animation: fade 1s linear 0s 1 normal;
 }
 
 @keyframes quoteAnim {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  51% {
-    transform: translateY(100px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+  0% {transform: translateY(0px);}
+  50% {transform: translateY(-100px); opacity: 0;}
+  51% {transform: translateY(100px);}
+  100% {transform: translateY(0px);}
 }
-@-webkit-keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+
 @keyframes fade {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}/*# sourceMappingURL=styles.css.map */
+  0% {opacity: 1}
+  100% {opacity: 0}
+}

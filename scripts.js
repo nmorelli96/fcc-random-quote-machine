@@ -1,5 +1,7 @@
 import quotes from './quotes.js';
 
+const loadingScr = document.getElementById("preloader");
+const backgroundVid = document.getElementById("background");
 const music = document.getElementById('music');
 const ambience = document.getElementById('ambience');
 
@@ -19,17 +21,15 @@ const newQuoteBtn = document.getElementById('new-quote');
 getQuote();
 
 newQuoteBtn.addEventListener("click", (event) => {
-  quoteBox.classList.add('animate__animated', 'animate__fadeOutUp');
-  quoteBox.addEventListener('animationend', () => {
-    
-    console.log(quotePara.innerText);
+  quoteBox.classList.toggle('quoteBoxAnim');
+  setTimeout(function () {
     getQuote();
-    quoteBox.classList.remove('animate__animated', 'animate__fadeOutUp');
-    quoteBox.classList.add('animate__animated', 'animate__fadeInUp');
-    quoteBox.addEventListener('animationend', () => {
-      quoteBox.classList.remove('animate__animated', 'animate__fadeInUp');
-    });
-  });
+  }, 1000);
+  setTimeout(function () {
+    quoteBox.classList.toggle('quoteBoxAnim');
+  }, 2000);
+
+  console.log(quotes.length);
 })
 
 function getQuote() {
@@ -68,6 +68,13 @@ ambienceIcon.onclick = function controlAmbience() {
   }
 }
 
+window.addEventListener("load", function () {
+  loadingScr.classList.toggle('fadeOutAnim');
+  setTimeout(function () {
+    loadingScr.style.display = "none";
+  }, 950);
+});
 
+document.getElementById("tweet-btn").innerHTML = (`<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large" data-text=' a \+ ${quotePara.textContent} \+ ${authorPara.textContent} \+ a'>Tweet</a>`)
 
-//console.log(getQuote())
+console.log(`<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large" data-text=" a \+ ${quotePara.textContent} \+ ${authorPara.textContent} \+ 'a">Tweet</a>`)

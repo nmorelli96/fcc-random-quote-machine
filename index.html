@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="./styles.css" />
   <script type="module" src="./scripts.js" defer></script>
   <script type="module" src="./quotes.js" defer></script>
+  <script src="./jqueries.js" defer></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
@@ -25,6 +27,8 @@
 
 <body>
 
+  <div id="preloader"></div>
+
   <div class="backgroundMedia">
     <video id="background" autoplay loop muted>
       <source src="./resources/nature.mp4" type="video/mp4">
@@ -38,7 +42,7 @@
     <div class="nav-item dropdown">
       <a title="Sound FX" class="nav-link dropdown-toggle unselectable" href="#" id="navbardrop"
         data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-        <i class="fa-solid fa-volume-low"></i>
+        <i class="fa-solid fa-volume-high"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-dark">
         <span title="Music" class="fa-stack fa dropdown-item" id="music-icon" onclick="controlMusic()">
@@ -47,7 +51,7 @@
           <i class="fa-regular fa-circle fa-stack-2x"></i>
         </span>
         <span title="Ambience audio" class="fa-stack fa dropdown-item" id="ambience-icon">
-          <i class="fa-solid fa-volume-high fa-stack-1x"></i>
+          <i class="fa-solid fa-volume-low fa-stack-1x"></i>
           <i class="fa-solid fa-slash fa-stack-1x" id="ambience-mute"></i>
           <i class="fa-regular fa-circle fa-stack-2x"></i>
         </span>
@@ -62,9 +66,18 @@
   <section id="main-section" class="main-section d-flex justify-content-center align-items-center">
 
     <div class='container-fluid d-flex flex-column p-4 w-50 justify-content-center align-items-center' id="quote-box">
-      <div class='container-fluid lead d-flex justify-content-center' id="text"><p id="quote-para"></p></div>
-      <div class='container-fluid lead d-flex justify-content-end' id="author"><p id="author-para"></p></div>
-      <div class="container-fluid d-flex justify-content-end">
+      <div class='container-fluid lead d-flex justify-content-center' id="text">
+        <p id="quote-para"></p>
+      </div>
+      <div class='container-fluid lead d-flex justify-content-end' id="author">
+        <p id="author-para"></p>
+      </div>
+      <div class="container-fluid d-flex justify-content-between">
+        <div id="tweet-btn"></div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" role="switch" id="liveBG">
+          <label class="form-check-label" for="liveBG">Live background</label>
+        </div>
         <button class="btn btn-success row" id="new-quote">New Quote</button>
       </div>
   </section>

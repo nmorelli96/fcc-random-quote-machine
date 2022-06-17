@@ -16,6 +16,7 @@ const authorPara = document.getElementById("author-para");
 const quoteBox = document.getElementById('quote-box');
 const quoteDiv = document.getElementById('text');
 const authorDiv = document.getElementById('author');
+
 const newQuoteBtn = document.getElementById('new-quote');
 
 getQuote();
@@ -44,6 +45,11 @@ function getQuote() {
   if (quotes.length == 0) {
     window.location.reload();
   }
+
+  $('#tweet-quote').attr(
+    'data-text',
+    `“` + quotePara.textContent.replace(/"/g, "") + `” \n \n` + ` - ` + authorPara.textContent + ` #quotes \n`
+  );
 }
 
 musicIcon.onclick = function controlMusic() {
@@ -75,6 +81,21 @@ window.addEventListener("load", function () {
   }, 950);
 });
 
-document.getElementById("tweet-btn").innerHTML = (`<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large" data-text=' a \+ ${quotePara.textContent} \+ ${authorPara.textContent} \+ a'>Tweet</a>`)
 
-console.log(`<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large" data-text=" a \+ ${quotePara.textContent} \+ ${authorPara.textContent} \+ 'a">Tweet</a>`)
+
+$(document).ready(function () {
+  checkSwitch();
+  $("#liveBG").click(function () {
+    checkSwitch();
+  });
+});
+
+function checkSwitch() {
+  let check = $("#liveBG").prop('checked');
+  if (check == true) {
+    $("#background").get(0).play();
+  }
+  else {
+    $("#background").get(0).pause();
+  }
+}

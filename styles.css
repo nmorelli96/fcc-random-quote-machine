@@ -1,5 +1,6 @@
 body {
   padding-right: 0 !important;
+  position: relative;
 }
 
 #preloader {
@@ -11,7 +12,7 @@ body {
 }
 
 #background {
-  position: fixed;
+  position: absolute;
   z-index: -1;
   width: 100%;
   height: 100vh;
@@ -69,10 +70,64 @@ nav {
   text-align: justify;
   font-style: italic;
 }
+#quote-box .form-check-input:checked {
+  background-color: #ffa600 !important;
+}
 
 #info-section {
   height: 100vh;
-  background: #dee2b8;
+}
+#info-section h2,
+#info-section p {
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+#info-section .info-child {
+  z-index: 2;
+}
+#info-section .info-child .contact-btn {
+  text-decoration: none !important;
+}
+#info-section .info-child .contact-btn div {
+  text-align: center;
+  background-color: black;
+  padding: 5px 0px 5px 0px;
+  margin: auto 5px auto 5px;
+  border-radius: 8px;
+}
+#info-section .panel-group {
+  position: absolute;
+  bottom: 0;
+}
+#info-section .panel-group a {
+  color: gold;
+  text-decoration: none;
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+#info-section .panel-group .panel-body {
+  display: flex;
+  flex-flow: column wrap !important;
+}
+#info-section .panel-group .panel-body p {
+  text-shadow: none;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+#info-section .panel-title {
+  text-align: center;
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+
+.parent::before {
+  content: "";
+  background: #dee2b8 url("./resources/zen-wallpaper.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  filter: blur(0.5px) brightness(50%) sepia(0.2) saturate(200%);
 }
 
 .unselectable {
@@ -91,6 +146,11 @@ nav {
 .fadeOutAnim {
   -webkit-animation: fade 1s linear 0s 1 normal;
           animation: fade 1s linear 0s 1 normal;
+}
+
+.boxShadowAnim {
+  -webkit-animation: boxShadow 60s linear 0s 1 normal;
+          animation: boxShadow 60s linear 0s 1 normal;
 }
 
 @-webkit-keyframes quoteAnim {
@@ -138,5 +198,39 @@ nav {
   }
   100% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes boxShadow {
+  0% {
+    box-shadow: none;
+  }
+  2% {
+    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 5px;
+  }
+  100% {
+    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 5px;
+  }
+}
+@keyframes boxShadow {
+  0% {
+    box-shadow: none;
+  }
+  2% {
+    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 5px;
+  }
+  100% {
+    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 5px;
   }
 }/*# sourceMappingURL=styles.css.map */

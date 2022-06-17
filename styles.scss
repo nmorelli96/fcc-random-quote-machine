@@ -1,4 +1,7 @@
-body { padding-right: 0 !important }
+body {
+  padding-right: 0 !important;
+  position: relative;
+}
 
 #preloader {
   background: black url(./resources/loop.gif) no-repeat center center;
@@ -9,7 +12,7 @@ body { padding-right: 0 !important }
 }
 
 #background {
-  position: fixed;
+  position: absolute;
   z-index: -1;
   width: 100%;
   height: 100vh;
@@ -66,11 +69,79 @@ nav {
     text-align: justify;
     font-style: italic;
   }
+
+
+  .form-check-input:checked {
+    background-color: #ffa600 !important;
+  }
+
 }
 
 #info-section {
   height: 100vh;
-  background: #dee2b8;
+
+  h2,
+  p {
+    color: white;
+    text-shadow: 0 0 5px black;
+  }
+
+  .info-child {
+    z-index: 2;
+
+    .contact-btn {
+      text-decoration: none !important;
+
+      div {
+        text-align: center;
+        background-color: black;
+        padding: 5px 0px 5px 0px;
+        margin: auto 5px auto 5px;
+        border-radius: 8px;
+      }
+    }
+  }
+
+  .panel-group {
+    position: absolute;
+    bottom: 0;
+
+
+    a {
+      color: gold;
+      text-decoration: none;
+      text-shadow: 0 0 5px rgb(0, 0, 0);
+    }
+
+    .panel-body {
+      display: flex;
+      flex-flow: column wrap !important;
+
+      p {
+        text-shadow: none;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-shadow: 0 0 5px rgb(0, 0, 0);
+      }
+    }
+  }
+
+  .panel-title {
+    text-align: center;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+  }
+}
+
+.parent::before {
+  content: "";
+  background: #dee2b8 url("./resources/zen-wallpaper.jpg") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  -webkit-filter: blur(0.5px) brightness(50%) sepia(0.2) saturate(200%);
+  filter: blur(0.5px) brightness(50%) sepia(0.2) saturate(200%);
 }
 
 .unselectable {
@@ -90,14 +161,55 @@ nav {
   animation: fade 1s linear 0s 1 normal;
 }
 
+.boxShadowAnim {
+  animation: boxShadow 60s linear 0s 1 normal;
+}
+
 @keyframes quoteAnim {
-  0% {transform: translateY(0px);}
-  50% {transform: translateY(-100px); opacity: 0;}
-  51% {transform: translateY(100px);}
-  100% {transform: translateY(0px);}
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  51% {
+    transform: translateY(100px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 @keyframes fade {
-  0% {opacity: 1}
-  100% {opacity: 0}
+  0% {
+    opacity: 1
+  }
+
+  100% {
+    opacity: 0
+  }
+}
+
+@keyframes boxShadow {
+  0% {
+    box-shadow: none;
+  }
+
+  2% {
+    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 5px;
+  }
+
+  100% {
+    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 5px;
+  }
 }

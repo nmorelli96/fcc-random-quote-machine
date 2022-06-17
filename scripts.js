@@ -1,7 +1,6 @@
 import quotes from './quotes.js';
 
 const loadingScr = document.getElementById("preloader");
-const backgroundVid = document.getElementById("background");
 const music = document.getElementById('music');
 const ambience = document.getElementById('ambience');
 
@@ -14,10 +13,8 @@ const quotePara = document.getElementById("quote-para");
 const authorPara = document.getElementById("author-para");
 
 const quoteBox = document.getElementById('quote-box');
-const quoteDiv = document.getElementById('text');
-const authorDiv = document.getElementById('author');
-
 const newQuoteBtn = document.getElementById('new-quote');
+const tweetQuote = document.getElementById('tweet-quote');
 
 getQuote();
 
@@ -38,18 +35,13 @@ function getQuote() {
   let printedQuote = quotes[quoteIndex];
   quotePara.innerHTML = '"' + printedQuote.quote + '"';
   authorPara.innerHTML = printedQuote.author;
-  //console.log(quoteIndex);
-  //console.log(printedQuote);
   quotes.splice(quoteIndex, 1);
-  //console.log(quotes)
+
   if (quotes.length == 0) {
     window.location.reload();
   }
 
-  $('#tweet-quote').attr(
-    'data-text',
-    `“` + quotePara.textContent.replace(/"/g, "") + `” \n \n` + ` - ` + authorPara.textContent + ` #quotes \n`
-  );
+  tweetQuote.setAttribute("href", `https://twitter.com/intent/tweet?url=https://bit.ly/3aXGeDq&hashtags=quotes,LifeQuotes&text=` + `“` + quotePara.textContent.replace(/"/g, "") + `”` + ` - ` + authorPara.textContent)
 }
 
 musicIcon.onclick = function controlMusic() {
@@ -80,8 +72,6 @@ window.addEventListener("load", function () {
     loadingScr.style.display = "none";
   }, 950);
 });
-
-
 
 $(document).ready(function () {
   checkSwitch();

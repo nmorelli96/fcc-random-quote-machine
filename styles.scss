@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding-right: 0 !important;
   position: relative;
@@ -18,7 +22,7 @@ body {
   height: 100vh;
   object-fit: cover;
   filter: brightness(0.9);
-  filter: blur(0.6px);
+  filter: blur(0.3px);
 }
 
 nav {
@@ -35,6 +39,10 @@ nav {
   transform: scale(1.3);
 }
 
+.fa-slash {
+  animation: fadeIn 0.5s linear 0s 1 normal;
+}
+
 .dropdown-menu-dark {
   --bs-dropdown-bg: rgba(0, 0, 0, 0.8) !important;
   --bs-dropdown-width: 10px !important;
@@ -47,6 +55,7 @@ nav {
   --bs-dropdown-spacer: 15px !important;
   box-shadow: 0 0 4px lightgray;
   min-width: 60px !important;
+  animation: fadeIn 0.5s linear 0s 1 normal;
 }
 
 .dropdown-item {
@@ -63,13 +72,47 @@ nav {
   color: white;
   border-radius: 30px;
   box-shadow: 0 0 5px gray;
-  min-width: 300px !important;
+  width: 35%;
+
+  @media (max-width: 1400px) {
+    min-width: 50% !important;
+}
+
+  @media (max-width: 1200px) {
+    min-width: 60% !important;
+  }
+  
+  @media (max-width: 992px) {
+    min-width: 70% !important;
+  }
+  
+  @media (max-width: 768px) {
+    min-width: 80% !important;
+  }
+  
+  @media (max-width: 576px) {
+    min-width: 90% !important;
+  }
 
   #quote-para {
     text-align: justify;
     font-style: italic;
   }
 
+  #tweet-btn {
+    margin-bottom: 10px;
+
+    a {
+      background-color: #1d9bf0;
+      color: white;
+      text-decoration: none;
+      font-family: Arial;
+      font-size: 14px;
+      padding: 6px 12px 6px 12px;
+      border-radius: 20px;
+
+    }
+  }
 
   .form-check-input:checked {
     background-color: #ffa600 !important;
@@ -84,20 +127,30 @@ nav {
   p {
     color: white;
     text-shadow: 0 0 5px black;
+    text-align: center;
   }
 
   .info-child {
     z-index: 2;
 
-    .contact-btn {
-      text-decoration: none !important;
+    #media {
 
-      div {
-        text-align: center;
-        background-color: black;
-        padding: 5px 0px 5px 0px;
-        margin: auto 5px auto 5px;
-        border-radius: 8px;
+      .contact-btn {
+        text-decoration: none !important;
+
+        div {
+          text-align: center;
+          background-color: black;
+          padding: 8px 2px 8px 2px;
+          margin: auto 8px auto 8px;
+          border-radius: 8px;
+          animation: scaleDown 0.3s linear 0s 1 normal;
+        }
+
+        div:hover {
+          animation: scaleUp 0.3s linear 0s 1 normal;
+          animation-fill-mode: forwards; //makes the element stay big
+        }
       }
     }
   }
@@ -105,7 +158,6 @@ nav {
   .panel-group {
     position: absolute;
     bottom: 0;
-
 
     a {
       color: gold;
@@ -116,12 +168,18 @@ nav {
     .panel-body {
       display: flex;
       flex-flow: column wrap !important;
+      padding: 5px;
+
+      a:hover {
+        color: goldenrod !important;
+      }
 
       p {
         text-shadow: none;
         margin-top: 0px;
         margin-bottom: 0px;
         text-shadow: 0 0 5px rgb(0, 0, 0);
+        text-align: left;
       }
     }
   }
@@ -129,6 +187,10 @@ nav {
   .panel-title {
     text-align: center;
     text-shadow: 0 0 5px rgb(0, 0, 0);
+
+    a:hover {
+      color: goldenrod !important;
+    }
   }
 }
 
@@ -158,11 +220,12 @@ nav {
 }
 
 .fadeOutAnim {
-  animation: fade 1s linear 0s 1 normal;
+  animation: fadeOut 1s linear 0s 1 normal;
 }
 
 .boxShadowAnim {
-  animation: boxShadow 60s linear 0s 1 normal;
+  animation: boxShadow 1s linear 0s 1 normal;
+  animation-fill-mode: forwards;
 }
 
 @keyframes quoteAnim {
@@ -184,7 +247,7 @@ nav {
   }
 }
 
-@keyframes fade {
+@keyframes fadeOut {
   0% {
     opacity: 1
   }
@@ -194,22 +257,46 @@ nav {
   }
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+
+  100% {
+    opacity: 1
+  }
+}
+
 @keyframes boxShadow {
   0% {
     box-shadow: none;
-  }
-
-  2% {
-    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    padding: 5px;
   }
 
   100% {
     box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    padding: 5px;
+  }
+}
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px gold;
+  }
+}
+
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px gold;
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

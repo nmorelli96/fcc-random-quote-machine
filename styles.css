@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   padding-right: 0 !important;
   position: relative;
@@ -19,7 +23,7 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   filter: brightness(0.9);
-  filter: blur(0.6px);
+  filter: blur(0.3px);
 }
 
 nav {
@@ -36,6 +40,11 @@ nav {
   transform: scale(1.3);
 }
 
+.fa-slash {
+  -webkit-animation: fadeIn 0.5s linear 0s 1 normal;
+          animation: fadeIn 0.5s linear 0s 1 normal;
+}
+
 .dropdown-menu-dark {
   --bs-dropdown-bg: rgba(0, 0, 0, 0.8) !important;
   --bs-dropdown-width: 10px !important;
@@ -48,6 +57,8 @@ nav {
   --bs-dropdown-spacer: 15px !important;
   box-shadow: 0 0 4px lightgray;
   min-width: 60px !important;
+  -webkit-animation: fadeIn 0.5s linear 0s 1 normal;
+          animation: fadeIn 0.5s linear 0s 1 normal;
 }
 
 .dropdown-item {
@@ -64,11 +75,48 @@ nav {
   color: white;
   border-radius: 30px;
   box-shadow: 0 0 5px gray;
-  min-width: 300px !important;
+  width: 35%;
+}
+@media (max-width: 1400px) {
+  #quote-box {
+    min-width: 50% !important;
+  }
+}
+@media (max-width: 1200px) {
+  #quote-box {
+    min-width: 60% !important;
+  }
+}
+@media (max-width: 992px) {
+  #quote-box {
+    min-width: 70% !important;
+  }
+}
+@media (max-width: 768px) {
+  #quote-box {
+    min-width: 80% !important;
+  }
+}
+@media (max-width: 576px) {
+  #quote-box {
+    min-width: 90% !important;
+  }
 }
 #quote-box #quote-para {
   text-align: justify;
   font-style: italic;
+}
+#quote-box #tweet-btn {
+  margin-bottom: 10px;
+}
+#quote-box #tweet-btn a {
+  background-color: #1d9bf0;
+  color: white;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 14px;
+  padding: 6px 12px 6px 12px;
+  border-radius: 20px;
 }
 #quote-box .form-check-input:checked {
   background-color: #ffa600 !important;
@@ -81,19 +129,28 @@ nav {
 #info-section p {
   color: white;
   text-shadow: 0 0 5px black;
+  text-align: center;
 }
 #info-section .info-child {
   z-index: 2;
 }
-#info-section .info-child .contact-btn {
+#info-section .info-child #media .contact-btn {
   text-decoration: none !important;
 }
-#info-section .info-child .contact-btn div {
+#info-section .info-child #media .contact-btn div {
   text-align: center;
   background-color: black;
-  padding: 5px 0px 5px 0px;
-  margin: auto 5px auto 5px;
+  padding: 8px 2px 8px 2px;
+  margin: auto 8px auto 8px;
   border-radius: 8px;
+  -webkit-animation: scaleDown 0.3s linear 0s 1 normal;
+          animation: scaleDown 0.3s linear 0s 1 normal;
+}
+#info-section .info-child #media .contact-btn div:hover {
+  -webkit-animation: scaleUp 0.3s linear 0s 1 normal;
+          animation: scaleUp 0.3s linear 0s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 #info-section .panel-group {
   position: absolute;
@@ -107,16 +164,24 @@ nav {
 #info-section .panel-group .panel-body {
   display: flex;
   flex-flow: column wrap !important;
+  padding: 5px;
+}
+#info-section .panel-group .panel-body a:hover {
+  color: goldenrod !important;
 }
 #info-section .panel-group .panel-body p {
   text-shadow: none;
   margin-top: 0px;
   margin-bottom: 0px;
   text-shadow: 0 0 5px rgb(0, 0, 0);
+  text-align: left;
 }
 #info-section .panel-title {
   text-align: center;
   text-shadow: 0 0 5px rgb(0, 0, 0);
+}
+#info-section .panel-title a:hover {
+  color: goldenrod !important;
 }
 
 .parent::before {
@@ -144,13 +209,15 @@ nav {
 }
 
 .fadeOutAnim {
-  -webkit-animation: fade 1s linear 0s 1 normal;
-          animation: fade 1s linear 0s 1 normal;
+  -webkit-animation: fadeOut 1s linear 0s 1 normal;
+          animation: fadeOut 1s linear 0s 1 normal;
 }
 
 .boxShadowAnim {
-  -webkit-animation: boxShadow 60s linear 0s 1 normal;
-          animation: boxShadow 60s linear 0s 1 normal;
+  -webkit-animation: boxShadow 1s linear 0s 1 normal;
+          animation: boxShadow 1s linear 0s 1 normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes quoteAnim {
@@ -184,7 +251,7 @@ nav {
     transform: translateY(0px);
   }
 }
-@-webkit-keyframes fade {
+@-webkit-keyframes fadeOut {
   0% {
     opacity: 1;
   }
@@ -192,45 +259,83 @@ nav {
     opacity: 0;
   }
 }
-@keyframes fade {
+@keyframes fadeOut {
   0% {
     opacity: 1;
   }
   100% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @-webkit-keyframes boxShadow {
   0% {
     box-shadow: none;
   }
-  2% {
-    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    padding: 5px;
-  }
   100% {
     box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    padding: 5px;
   }
 }
 @keyframes boxShadow {
   0% {
     box-shadow: none;
   }
-  2% {
-    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    padding: 5px;
-  }
   100% {
     box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 15px;
-    padding: 5px;
+  }
+}
+@-webkit-keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px gold;
+  }
+}
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px gold;
+  }
+}
+@-webkit-keyframes scaleDown {
+  0% {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px gold;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.2);
+    box-shadow: 0 0 5px gold;
+  }
+  100% {
+    transform: scale(1);
   }
 }/*# sourceMappingURL=styles.css.map */

@@ -9,20 +9,14 @@
   <link rel="stylesheet" href="./styles.css" />
   <script type="module" src="./scripts.js" defer></script>
   <script type="module" src="./quotes.js" defer></script>
+  <link rel="icon" type="image/png" href="./resources/quote.png" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="icon" type="image/png" href="./resources/quote.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
   <!--<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" defer></script>-->
-
   <script src="https://kit.fontawesome.com/935b5672af.js" crossorigin="anonymous"></script>
 
 </head>
@@ -47,12 +41,12 @@
         <i class="fa-solid fa-volume-high"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-dark">
-        <span title="Music" class="fa-stack fa dropdown-item" id="music-icon" onclick="controlMusic()">
+        <span title="Music" class="fa-stack fa dropdown-item unselectable" id="music-icon" onclick="controlMusic()">
           <i class="fa-solid fa-music fa-stack-1x"></i>
           <i class="fa-solid fa-slash fa-stack-1x" id="music-mute"></i>
           <i class="fa-regular fa-circle fa-stack-2x"></i>
         </span>
-        <span title="Ambience audio" class="fa-stack fa dropdown-item" id="ambience-icon">
+        <span title="Ambience audio" class="fa-stack fa dropdown-item unselectable" id="ambience-icon">
           <i class="fa-solid fa-volume-low fa-stack-1x"></i>
           <i class="fa-solid fa-slash fa-stack-1x" id="ambience-mute"></i>
           <i class="fa-regular fa-circle fa-stack-2x"></i>
@@ -67,7 +61,7 @@
 
   <section id="main-section" class="main-section d-flex justify-content-center align-items-center">
 
-    <div class='container-fluid d-flex flex-column p-3 w-50 justify-content-center align-items-center' id="quote-box">
+    <div class='container-fluid d-flex flex-column p-3 justify-content-center align-items-center' id="quote-box">
       <div class='container-fluid lead d-flex justify-content-center' id="text">
         <p id="quote-para"></p>
       </div>
@@ -75,12 +69,14 @@
         <p id="author-para"></p>
       </div>
       <div class="container-fluid d-flex justify-content-between">
-        <div id="tweet-btn"><a id="tweet-quote" href="https://twitter.com/intent/tweet" target="_blank"
-            data-url="https://nmorelli96.github.io/fcc-random-quote-machine/" class="twitter-share-button"
-            data-show-count="false" data-size="large" data-text="">Tweet</a></div>
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="liveBG" checked>
-          <label class="form-check-label" for="liveBG">Anim-BG</label>
+        <div>
+          <div id="tweet-btn">
+            <a class="button" id="tweet-quote" target="_blank"><i class="fa-brands fa-twitter fa-1x fa-fw"></i> Tweet</a>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="liveBG" checked>
+            <label class="form-check-label unselectable" for="liveBG">Background</label>
+          </div>
         </div>
         <button class="btn btn-success row" id="new-quote">New Quote</button>
       </div>
@@ -90,9 +86,8 @@
     <section id="info-section"
       class="info-section container-fluid d-flex flex-column justify-content-center align-items-center">
       <div class="info-child">
-        <!--<img id="info-bg" src="./resources/teahub.io-zen-wallpaper-197020.jpg" >-->
-        <h2 id="h2">Hey, enjoying the view?</h2>
-        <p>Let me know what you think</p>
+        <h2 class="unselectable" id="h2">Hey, enjoying the view?</h2>
+        <p class="unselectable">Let me know what you think</p>
         <div class="container-fluid d-flex justify-content-center align-items-center" id="media">
           <a href="https://github.com/nmorelli96" target="_blank" class="contact-btn">
             <div>
@@ -115,24 +110,34 @@
             </div>
           </a>
         </div>
-        
+
       </div>
-      <div class="panel-group">
+      <div class="panel-group unselectable">
         <div class="panel panel-default">
           <div id="collapse1" class="panel-collapse collapse">
             <div class="panel-body boxShadowAnim">
               <p>Favicon by Flaticon - <a href="https://flaticon.com">flaticon.com</a></p>
-              <p>Animated Background by <a href="https://pixabay.com/es/users/josephphackney-15024843/?tab=videos">josephphackney</a> - <a href="https://pixabay.com">pixabay.com</a></p>
-              <p>Ambience Nature by <a href="https://pixabay.com/es/sound-effects/forest-with-small-river-birds-and-nature-field-recording-6735/">Garuda1982</a> - <a href="https://pixabay.com">pixabay.com</a></p>
-              <p>Ambience Waterfall by <a href="https://www.zapsplat.com/author/silverplatter-audio/">Silverplatter Audio</a> - <a href="https://www.zapsplat.com">zapsplat.com</a></p>
-              <p>Music: "Forest Walk" by Alexander Nakarada <a href="www.serpentsoundstudios.com">www.serpentsoundstudios.com</a> - Licensed under CC by Attribution</p>
+              <p>Animated Background by <a
+                  href="https://pixabay.com/es/users/josephphackney-15024843/?tab=videos">josephphackney</a> - <a
+                  href="https://pixabay.com">pixabay.com</a></p>
+              <p>Ambience Nature by <a
+                  href="https://pixabay.com/es/sound-effects/forest-with-small-river-birds-and-nature-field-recording-6735/">Garuda1982</a>
+                - <a href="https://pixabay.com">pixabay.com</a></p>
+              <p>Ambience Waterfall by <a href="https://www.zapsplat.com/author/silverplatter-audio/">Silverplatter
+                  Audio</a> - <a href="https://www.zapsplat.com">zapsplat.com</a></p>
+              <p>Music: "Forest Walk" by Alexander Nakarada <a
+                  href="www.serpentsoundstudios.com">www.serpentsoundstudios.com</a> - Licensed under CC by Attribution
+              </p>
             </div>
           </div>
 
-          <div class="panel-heading">
+          <div class="panel-heading unselectable">
             <p class="panel-title ">
-              <a data-bs-toggle="collapse" href="#collapse1"><i class="fa-solid fa-caret-up fa-2xs"></i> Attributions <i class="fa-solid fa-caret-up fa-2xs"></i></a> &nbsp; &nbsp;Based on the FCC course
-          </p>
+              <a data-bs-toggle="collapse" href="#collapse1"><i class="fa-solid fa-caret-up fa-2xs "></i> Attributions
+                <i class="fa-solid fa-caret-up fa-2xs"></i></a> &nbsp; &nbsp;Based on the <a target="_blank"
+                href="https://www.freecodecamp.org/learn/front-end-development-libraries/">FCC course</a> by <a
+                target="_blank" href="https://github.com/nmorelli96/fcc-random-quote-machine">nmorelli96</a>
+            </p>
           </div>
         </div>
       </div>

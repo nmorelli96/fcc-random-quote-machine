@@ -92,10 +92,6 @@ const quotes = [
       "author": "Alan Moore"
     },
     {
-      "quote": "Two possibilities exist: either we are alone in the Universe or we are not. Both are equally terrifying",
-      "author": "Arthur C. Clarke"
-    },
-    {
       "quote": "You cannot control the behavior of others, but you can always choose how you respond to it.",
       "author": "Roy T. Bennett"
     },

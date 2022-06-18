@@ -76,20 +76,20 @@ nav {
 
   @media (max-width: 1400px) {
     min-width: 50% !important;
-}
+  }
 
   @media (max-width: 1200px) {
     min-width: 60% !important;
   }
-  
+
   @media (max-width: 992px) {
     min-width: 70% !important;
   }
-  
+
   @media (max-width: 768px) {
     min-width: 80% !important;
   }
-  
+
   @media (max-width: 576px) {
     min-width: 90% !important;
   }
@@ -131,7 +131,7 @@ nav {
   }
 
   .info-child {
-    z-index: 2;
+    z-index: 0;
 
     #media {
 
@@ -273,8 +273,8 @@ nav {
   }
 
   100% {
-    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 25px 25px rgba(0, 0, 0, 0.65);
+    background-color: rgba(0, 0, 0, 0.65);
     border-radius: 15px;
   }
 }
